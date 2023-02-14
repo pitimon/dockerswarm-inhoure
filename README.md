@@ -1,7 +1,7 @@
 # dockerswarm-inhoure
  myCluster
-- [Docker Swarm Rock](https://dockerswarm.rocks)
-## Prepare node
+- [นำทางโดย Docker Swarm Rock](https://dockerswarm.rocks)
+## Prepare node Ubuntu 22.04 (3 nodes)
 ```shell
 sudo -i
 ```
@@ -53,11 +53,12 @@ ln -s /etc/machine-id /var/lib/dbus/machine-id
 reboot
 ```
 - grant user for docker authorited
+- server normal user login
 ```shell
 sudo usermod -aG docker $USER
 docker ps
 ```
-### Swarm init
+## Swarm init
 ```
 docker swarm init
 ```
@@ -71,3 +72,6 @@ docker node ls
 curl -L https://downloads.portainer.io/ce2-17/portainer-agent-stack.yml -o portainer-agent-stack.yml
 docker stack deploy -c portainer-agent-stack.yml portainer
 ```
+
+## Traefik Proxy
+- [Treafik](https://traefik.io/)
