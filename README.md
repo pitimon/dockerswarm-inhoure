@@ -50,6 +50,15 @@ reboot
 sudo usermod -aG docker $USER
 docker ps
 ```
+### Swarm init
+```
+docker swarm init
+```
+- copy command token for run on worker node
+- after run at manager node
+```
+docker node ls
+```
 ### deploy portainer for swarm
 ```shell
 curl -L https://downloads.portainer.io/ce2-17/portainer-agent-stack.yml -o portainer-agent-stack.yml
