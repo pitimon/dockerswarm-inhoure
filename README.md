@@ -5,12 +5,16 @@
 ```shell
 sudo -i
 ```
+- replace change-me to your hostname
 ```shell
 hostnamectl set-hostname “Change-me”
 ```
+- change local time
 ```shell
 timedatectl set-timezone Asia/Bangkok
-
+```
+- docker engine install for ubuntu
+```
 apt update ; apt upgrade -y
 apt-get install \
     ca-certificates \
@@ -28,6 +32,8 @@ echo \
 apt-get update
 apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 ```
+- replace apt to nala packet management 
+- [nala](https://gitlab.com/volian/nala)
 ```shell
 wget https://gitlab.com/volian/nala/uploads/605d833bdffd23cee4bb6670b2d6c27b/nala_0.12.1_all.deb
 dpkg -i nala_0.12.1_all.deb 
@@ -46,6 +52,7 @@ rm /var/lib/dbus/machine-id
 ln -s /etc/machine-id /var/lib/dbus/machine-id
 reboot
 ```
+- grant user for docker authorited
 ```shell
 sudo usermod -aG docker $USER
 docker ps
