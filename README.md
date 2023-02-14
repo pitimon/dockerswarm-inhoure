@@ -1,5 +1,6 @@
 # dockerswarm-inhoure
  myCluster
+- [Docker Swarm Rock](https://dockerswarm.rocks)
 ## Prepare node
 ```shell
 sudo -i
