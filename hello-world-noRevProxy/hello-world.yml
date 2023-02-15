@@ -1,0 +1,21 @@
+version: '3.3'
+services:
+  app:
+    image: rancher/hello-world:latest
+    ports:
+     - 10005:80
+    networks:
+     - default
+    logging:
+      driver: json-file
+    deploy:
+      resources:
+        reservations:
+          cpus: '0.01'
+          memory: 8M
+        limits:
+          cpus: '0.2'
+          memory: 16M
+networks:
+  default:
+    driver: overlay

@@ -1,7 +1,7 @@
 # Traefik
 ## Lab limit public access
 - edit hosts file for fix solution
-- this domain demo is ".cpelab.local"
+- this domain demo is ".cpedemo.local"
 - demo cann't get cetificate from Let's Encrypt 
 
 ## Step
@@ -24,7 +24,7 @@ docker node update --label-add traefik-public.traefik-public-certificates=true $
 
 ```
 export EMAIL=user@smtp.com
-export DOMAIN=traefik.cpelab.local
+export DOMAIN=traefik.cpedemo.local
 export USERNAME=admin
 export PASSWORD=changeMe
 export HASHED_PASSWORD=$(openssl passwd -apr1 $PASSWORD)

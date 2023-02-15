@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  test-volume:
+    image: ubuntu
+    logging:
+      driver: json-file
+    command: tail -f /dev/null
+    deploy:
+      replicas: 1
+      resources:
+        reservations:
+          cpus: '0.1'
+          memory: 8M
+        limits:
+          cpus: '0.4'
+          memory: 64M

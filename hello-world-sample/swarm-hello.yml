@@ -15,7 +15,7 @@ services:
         traefik.docker.network: traefik-public
         traefik.enable: 'true'
         traefik.http.routers.rhello-http.entrypoints: http
-        traefik.http.routers.rhello-http.rule: Host(`lab1.cpelab.local`)
+        traefik.http.routers.rhello-http.rule: Host(`lab1.cpedemo.local`)
         traefik.http.services.rhello.loadbalancer.server.port: '80'
       resources:
         reservations:
