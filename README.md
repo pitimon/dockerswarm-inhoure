@@ -62,7 +62,7 @@ reboot
 cp /dev/null /etc/machine-id
 rm /var/lib/dbus/machine-id
 ln -s /etc/machine-id /var/lib/dbus/machine-id
-reboot
+init 0
 ```
 - grant user for docker authorited
 - server normal user login
