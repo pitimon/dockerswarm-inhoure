@@ -79,8 +79,8 @@ docker swarm init
 ```
 docker node ls
 ```
-### deploy portainer for swarm
-```shell
+### deploy portainer for swarm (Manager Node)
+```
 curl -L https://downloads.portainer.io/ce2-17/portainer-agent-stack.yml -o portainer-agent-stack.yml
 docker stack deploy -c portainer-agent-stack.yml portainer
 ```
