@@ -6,6 +6,9 @@ services:
      - traefik-public
     logging:
       driver: json-file
+      options:
+        "max-size": "10m"
+        "max-file": "5"
     deploy:
       labels:
         traefik.constraint-label: traefik-public
@@ -21,6 +24,7 @@ services:
         limits:
           cpus: '0.2'
           memory: 16M
+          
 networks:
   traefik-public:
     external: true
