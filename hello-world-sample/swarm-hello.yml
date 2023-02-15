@@ -1,0 +1,26 @@
+version: '3.3'
+services:
+  app:
+    image: rancher/hello-world:latest
+    networks:
+     - traefik-public
+    logging:
+      driver: json-file
+    deploy:
+      labels:
+        traefik.constraint-label: traefik-public
+        traefik.docker.network: traefik-public
+        traefik.enable: 'true'
+        traefik.http.routers.rhello-http.entrypoints: http
+        traefik.http.routers.rhello-http.rule: Host(`lab1.cpelab.local`)
+        traefik.http.services.rhello.loadbalancer.server.port: '80'
+      resources:
+        reservations:
+          cpus: '0.01'
+          memory: 8M
+        limits:
+          cpus: '0.2'
+          memory: 16M
+networks:
+  traefik-public:
+    external: true
