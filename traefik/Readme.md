@@ -1,7 +1,7 @@
 # Traefik
 ## Lab limit public access
 - edit hosts file for fix solution
-- this domain demo is ".cpelab.local
+- this domain demo is ".cpelab.local"
 - demo cann't get cetificate from Let's Encrypt 
 
 ## Step

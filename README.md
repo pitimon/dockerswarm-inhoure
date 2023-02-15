@@ -38,11 +38,23 @@ apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docke
 wget https://gitlab.com/volian/nala/uploads/605d833bdffd23cee4bb6670b2d6c27b/nala_0.12.1_all.deb
 dpkg -i nala_0.12.1_all.deb 
 apt-get -f install -y  
+```
+```
+tee -a /etc/apt/sources.list.d/nala-sources.list <<EOF 
+# Sources file built for nala
+deb https://mirror1.ku.ac.th/ubuntu/ jammy main restricted universe multiverse
+deb https://mirrors.nipa.cloud/ubuntu/ jammy main restricted universe multiverse
+deb https://mirror.kku.ac.th/ubuntu/ jammy main restricted universe multiverse
+deb http://mirror1.totbb.net/ubuntu/ jammy main restricted universe multiverse
+EOF
+```
+```
 nala update  
 nala upgrade -y 
 nala list —upgradable
 nala install htop dnsutils mtr -y
-# nala install “other list”
+```
+```
 reboot
 ```
 ### Option: clone to template
