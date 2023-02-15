@@ -75,3 +75,8 @@ docker stack deploy -c portainer-agent-stack.yml portainer
 
 ## Traefik Proxy
 - [Treafik](https://traefik.io/)
+- [Step](https://github.com/pitimon/dockerswarm-inhoure/tree/main/traefik)
+
+## Swarmpit
+
+## Sample deploy
