@@ -85,6 +85,8 @@ curl -L https://downloads.portainer.io/ce2-17/portainer-agent-stack.yml -o porta
 docker stack deploy -c portainer-agent-stack.yml portainer
 ```
 
+- Revert Proxy
+- edit hosts file (Lab compatible)
 ## Traefik Proxy
 - [Treafik](https://traefik.io/)
 - [Step](https://github.com/pitimon/dockerswarm-inhoure/tree/main/traefik)
@@ -94,3 +96,4 @@ docker stack deploy -c portainer-agent-stack.yml portainer
 - [Step](https://github.com/pitimon/dockerswarm-inhoure/tree/main/swarmpit)
 
 ## Sample deploy
+- hello-world sample
