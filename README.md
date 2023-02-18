@@ -90,5 +90,7 @@ docker stack deploy -c portainer-agent-stack.yml portainer
 - [Step](https://github.com/pitimon/dockerswarm-inhoure/tree/main/traefik)
 
 ## Swarmpit
+- [Swarmpit](https://swarmpit.io)
+- [Step](https://github.com/pitimon/dockerswarm-inhoure/tree/main/swarmpit)
 
 ## Sample deploy
