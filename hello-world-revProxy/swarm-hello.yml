@@ -10,6 +10,7 @@ services:
         "max-size": "10m"
         "max-file": "5"
     deploy:
+      replicas: 1
       labels:
         traefik.constraint-label: traefik-public
         traefik.docker.network: traefik-public

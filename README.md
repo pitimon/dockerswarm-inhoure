@@ -87,7 +87,7 @@ docker stack deploy -c portainer-agent-stack.yml portainer
 
 # Next to EP-04
 - prepare hosts file
-- Windows client C:\Windows\System32\drivers\etc
+- Windows client C:\Windows\System32\drivers\etc\hosts
 - Linux/Mac client /etc/hosts
 
 ## Revert Proxy

@@ -2,7 +2,7 @@
 
 - Create an environment variable with the domain 
 ```
-export DOMAIN=swarmpit.cpelab.local
+export DOMAIN=swarmpit.cpedemo.local
 ```
 - Create a label in this node, so that the CouchDB database
 ```
