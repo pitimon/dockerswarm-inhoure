@@ -85,7 +85,12 @@ curl -L https://downloads.portainer.io/ce2-17/portainer-agent-stack.yml -o porta
 docker stack deploy -c portainer-agent-stack.yml portainer
 ```
 
-- Revert Proxy
+# Next to EP-04
+- prepare hosts file
+- Windows client C:\Windows\System32\drivers\etc
+- Linux/Mac client /etc/hosts
+
+## Revert Proxy
 - edit hosts file (Lab compatible)
 ## Traefik Proxy
 - [Treafik](https://traefik.io/)
