@@ -17,6 +17,14 @@ services:
         traefik.http.routers.rhello-http.entrypoints: http
         traefik.http.routers.rhello-http.rule: Host(`lab1.cpedemo.local`)
         traefik.http.services.rhello.loadbalancer.server.port: '80'
+#        - traefik.http.routers.rhello-http.middlewares=https-redirect
+#        - traefik.http.routers.rhello-https.rule=Host(`lab1.cpedemo.local`)
+#        - traefik.http.routers.rhello-https.entrypoints=https
+#        - traefik.http.routers.rhello-https.tls=true
+###        - traefik.http.routers.rhello-https.tls.certresolver=le
+#        - traefik.tls.stores.default.defaultgeneratedcert.resolver=myresolver
+#        - traefik.tls.stores.default.defaultgeneratedcert.domain.main=cpedemo.local
+#        - traefik.tls.stores.default.defaultgeneratedcert.domain.sans=lab1.cpedemo.local
       resources:
         reservations:
           cpus: '0.01'
