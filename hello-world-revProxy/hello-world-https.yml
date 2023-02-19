@@ -1,0 +1,39 @@
+version: '3.3'
+services:
+  app:
+    image: rancher/hello-world:latest
+    networks:
+     - traefik-public
+    logging:
+      driver: json-file
+      options:
+        "max-size": "10m"
+        "max-file": "5"
+    deploy:
+      replicas: 2
+      labels:
+        traefik.constraint-label: traefik-public
+        traefik.docker.network: traefik-public
+        traefik.enable: 'true'
+        traefik.http.routers.rhello-http.entrypoints: http
+        traefik.http.routers.rhello-http.rule: Host(`lab1.cpedemo.local`)
+        traefik.http.services.rhello.loadbalancer.server.port: '80'
+        traefik.http.routers.rhello-http.middlewares: https-redirect
+        traefik.http.routers.rhello-https.rule: Host(`lab1.cpedemo.local`)
+        traefik.http.routers.rhello-https.entrypoints: https
+        traefik.http.routers.rhello-https.tls: 'true'
+###        - traefik.http.routers.rhello-https.tls.certresolver=le
+#        - traefik.tls.stores.default.defaultgeneratedcert.resolver=myresolver
+#        - traefik.tls.stores.default.defaultgeneratedcert.domain.main=cpedemo.local
+#        - traefik.tls.stores.default.defaultgeneratedcert.domain.sans=lab1.cpedemo.local
+      resources:
+        reservations:
+          cpus: '0.01'
+          memory: 8M
+        limits:
+          cpus: '0.2'
+          memory: 16M
+          
+networks:
+  traefik-public:
+    external: true
