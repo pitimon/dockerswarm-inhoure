@@ -104,4 +104,5 @@ docker stack deploy -c portainer-agent-stack.yml portainer
 * [hello-world sample](https://github.com/pitimon/dockerswarm-inhoure/tree/main/hello-world-revProxy)
 
 # Ep-05
-* swarmprom Monitoring
+* swarmprom Monitoring(https://github.com/pitimon/dockerswarm-inhoure/tree/main/swarmprom)
+
