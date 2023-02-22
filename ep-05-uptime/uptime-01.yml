@@ -1,0 +1,49 @@
+version: '3.3'
+
+services:
+  kuma:
+    image: louislam/uptime-kuma:latest
+    volumes:
+      - uptime_data:/app/data
+    networks:
+      - traefik-public
+#    ports:
+#      - 3001:3001
+
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+         - node.role == worker
+      labels:
+        - traefik.constraint-label=traefik-public
+        - traefik.docker.network=traefik-public
+        - traefik.enable=true
+        - traefik.http.routers.${APPNAME}-http.entrypoints=http
+        - traefik.http.routers.${APPNAME}-http.rule=Host(`${APPNAME}.cpedemo.local`)
+        - traefik.http.services.${APPNAME}.loadbalancer.server.port=3001
+        - traefik.http.routers.${APPNAME}-http.middlewares=https-redirect
+        - traefik.http.routers.${APPNAME}-https.rule=Host(`${APPNAME}.cpedemo.local`)
+        - traefik.http.routers.${APPNAME}-https.entrypoints=https
+        - traefik.http.routers.${APPNAME}-https.tls=true
+      resources:
+        reservations:
+          cpus: '0.1'
+          memory: 8M
+        limits:
+          cpus: "2.0"
+          memory: 2G
+#    environment:
+#      - UPTIME_KUMA_CLOUDFLARED_TOKEN=${CLOUDFLARED_TOKEN}
+
+volumes:
+  uptime_data:
+    driver: local
+    driver_opts:
+      device: ':/mnt/june/swarm/${PATH}'
+      o: 'addr=${NFS_SERVER},rw,noatime,rsize=8192,wsize=8192,tcp,timeo=14,nfsvers=4'
+      type: nfs
+
+networks:
+  traefik-public:
+    external: true
