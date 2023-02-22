@@ -1,6 +1,6 @@
 - Create an environment variable with the domain where you want to access your Portainer 
 ```
-export DOMAIN=portainer.sys.example.com
+export DOMAIN=portainer.cpedemo.local
 ```
 - Get the Swarm node ID of this (manager) node and store it in an environment variable
 ```
